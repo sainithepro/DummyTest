@@ -1,6 +1,5 @@
 package com.projectname_qa.pages;
 
-import org.apache.commons.collections4.functors.IfClosure;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,7 +16,7 @@ public class InboxPage extends TestBase{
 	@FindBy(id = "jqi_state0_buttonYes")
 	WebElement trashConfirmYes;
 	
-	@FindBy(className = "jqiclose ")
+	@FindBy(className = "jqiclose")
 	WebElement closeTrashPopup;
 	
 	@FindBy(className = "jqimessage")
@@ -25,6 +24,9 @@ public class InboxPage extends TestBase{
 	
 	@FindBy(className = "rd_logout")
 	WebElement logoutButton;
+	
+	@FindBy(xpath = "//span[@class = 'rd_tp-rgt']")
+	WebElement inboxPageHi;
 	
 	
 	public InboxPage() throws Exception {
@@ -35,9 +37,16 @@ public class InboxPage extends TestBase{
 		return driver.getTitle();
 	}
 	
-	public boolean validateTrashCleanup() {
+	public boolean validateInboxPageHi() {
+		boolean imagePresent = inboxPageHi.isDisplayed();
+		return imagePresent;
+	}
+	
+	public boolean validateTrashCleanup() throws Exception {
 		trashButton.click();
+		Thread.sleep(2000);
 		trashConfirmYes.click();
+		Thread.sleep(2000);
 		boolean message = TrashConfirmed.isDisplayed();
 		closeTrashPopup.click();
 		return message;
@@ -49,5 +58,7 @@ public class InboxPage extends TestBase{
 		}
 		return new LogoutPage();
 	}
+	
+	
 
 }

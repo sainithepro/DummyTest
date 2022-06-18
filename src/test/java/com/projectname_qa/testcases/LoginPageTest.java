@@ -1,9 +1,8 @@
 package com.projectname_qa.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -28,7 +27,7 @@ public class LoginPageTest extends TestBase {
 		super();
 	}
 
-	@BeforeSuite(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	public void setup() throws Exception {
 		extent = ExtentManager.getReports();
 		test = extent.createTest("Opening browser Test");
@@ -83,7 +82,7 @@ public class LoginPageTest extends TestBase {
 
 	}
 
-	@AfterSuite(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		test.log(Status.PASS, "Login test case pass");
 		extent.flush();

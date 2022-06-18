@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name=" Login Test(failed)">
-    <classes>
-      <class name="com.projectname_qa.testcases.LoginPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="loginPageLogoImageTest"/>
-          <include name="setup"/>
-          <include name="loginDetailsTest"/>
-          <include name="loginPageCurrentURLTest"/>
-          <include name="loginPageTitleTest"/>
-        </methods>
-      </class> <!-- com.projectname_qa.testcases.LoginPageTest -->
-    </classes>
-  </test> <!--  Login Test(failed) -->
   <test thread-count="5" name=" Inbox Test(failed)">
     <classes>
       <class name="com.projectname_qa.testcases.InboxPageTest">
         <methods>
+          <include name="logoutTest"/>
           <include name="setup"/>
-          <include name="inboxPageTitleTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.projectname_qa.testcases.InboxPageTest -->
     </classes>

@@ -5,8 +5,9 @@
     <classes>
       <class name="com.projectname_qa.testcases.InboxPageTest">
         <methods>
+          <include name="logoutTest"/>
           <include name="setup"/>
-          <include name="inboxPageTitleTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.projectname_qa.testcases.InboxPageTest -->
     </classes>
